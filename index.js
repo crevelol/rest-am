@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 
 app.use(require("./routes/index"));
 
+app.get('/', (request, response) => {
+    response.sendFile(path.resolve(__dirname, 'index.html'))
+})
+
 mongoose.connect('mongodb+srv://cocoa-user:cocoa-user@cluster0.0jiih.mongodb.net/am', (err)=>{
     if(err) throw err;
         console.log('Base de datos ONLINE')
