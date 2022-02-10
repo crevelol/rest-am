@@ -1,12 +1,11 @@
+require("./config/config");
+
 var express = require('express');
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var app = express();
 
-const PUERTO = 3000;
-
 var cors = require('cors');
-
 
 app.use(cors({ origin: '*' }));
 
@@ -25,6 +24,6 @@ mongoose.connect('mongodb+srv://cocoa-user:cocoa-user@cluster0.0jiih.mongodb.net
         console.log('Base de datos ONLINE')
 })
 
-app.listen(PUERTO, function(){
-	console.log(`Servidor http correindo en el puerto ${PUERTO}`);
+app.listen(process.env.PORT, function(){
+	console.log(`Servidor http correindo en el puerto ${process.env.PORT}`);
 });
