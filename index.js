@@ -4,6 +4,7 @@ var express = require('express');
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var app = express();
+const path = require('path');
 
 var cors = require('cors');
 
@@ -25,5 +26,5 @@ mongoose.connect('mongodb+srv://cocoa-user:cocoa-user@cluster0.0jiih.mongodb.net
 })
 
 app.listen(process.env.PORT, function(){
-	console.log(`Servidor http correindo en el puerto ${process.env.PORT}`);
+	console.log(`Servidor http corriendo en el puerto ${process.env.PORT}`);
 });
