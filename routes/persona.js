@@ -43,6 +43,7 @@ app.post("/login", function(req, res) {
             })
         }
         userDB.matchPassword(user.password,userDB.password).then(pa =>{
+            console.log(pa)
             if(pa){
                 /*const tokenUser = Token.getJwtToken({
                     _id: userDB._id,
